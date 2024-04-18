@@ -11,19 +11,19 @@ provider "local" {
   # Configuration options
 }
 
-resource "local_file" "ejemplo" {
-  filename = "${var.archivo_name}.txt"
-  content  = var.contenido
+resource "local_file" "example" {
+  filename = "${var.file_name}.txt"
+  content  = var.content
 }
 
-resource "local_file" "ejemplo_lista" {
-  for_each = toset(var.archivos_listas)
+resource "local_file" "example_list" {
+  for_each = toset(var.list_files)
   filename = each.value
-  content  = var.contenido
+  content  = var.content
 }
 
-resource "local_file" "ejemplo_condicional" {
-  count    = var.crear_archivo ? 1 : 0
-  filename = "archivo_condicional.txt"
-  content  = var.contenido
+resource "local_file" "example_conditional" {
+  count    = var.should_create_file ? 1 : 0
+  filename = "conditional_file.txt"
+  content  = var.content
 }
