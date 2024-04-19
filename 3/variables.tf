@@ -1,4 +1,4 @@
-variable "nombre_s3" {
+variable "s3_bucket_name" {
   type    = string
   default = "my-tf-test-bucket-2024v1"
 
