@@ -11,7 +11,7 @@ provider "random" {
   # Configuration options
 }
 
-resource "random_string" "prefijo" {
+resource "random_string" "prefix" {
   count   = 4
   length  = 4
   special = false
@@ -19,9 +19,9 @@ resource "random_string" "prefijo" {
   numeric = false
 }
 
-resource "local_file" "archivo" {
+resource "local_file" "file" {
   count    = 4
-  content  = "lista de datos"
-  filename = "${random_string.prefijo[count.index].id}-datos.txt"
+  content  = "content of the file"
+  filename = "${random_string.prefix[count.index].id}-data.txt"
 
 }
