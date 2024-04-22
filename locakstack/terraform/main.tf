@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-east-1"
-  access_key = "fake"
-  secret_key = "fake"
+  access_key = "test"
+  secret_key = "test"
   #adicionales para localstack
   skip_credentials_validation = true
   skip_requesting_account_id  = true
@@ -16,7 +16,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "5.31.0"
+      version = "5.41.0"
     }
   }
 }
